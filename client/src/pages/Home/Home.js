@@ -7,7 +7,7 @@ import { Col, Row, Container } from "../../components/Grid";
 // import { List, ListItem } from "../../components/List";
 import { Input, FormBtn } from "../../components/Form";
 
-class Articles extends Component {
+class Home extends Component {
   state = {
     articles: [],
     topic: "",
@@ -22,6 +22,7 @@ class Articles extends Component {
     });
   };
 
+  // when the form is submitted...
   handleFormSubmit = event => {
     event.preventDefault();
 
@@ -44,18 +45,18 @@ class Articles extends Component {
       .catch(err => this.setState({ error: err.message }));
   };
 
-  handleSaveArticle = article => {
+  // handleSaveArticle = article => {
 
-    // save an article when save button is clicked
-    API.saveArticle({
-        headline: article.headline.main,
-        snippet: article.snippet,
-        pubDate: article.pub_date,
-        url: article.web_url
-      })
-        .then(res => alert("article saved"))
-        .catch(err => console.log(err))
-  }
+  //   // save an article when save button is clicked
+  //   API.saveArticle({
+  //       headline: article.headline.main,
+  //       snippet: article.snippet,
+  //       pubDate: article.pub_date,
+  //       url: article.web_url
+  //     })
+  //       .then(res => alert("article saved"))
+  //       .catch(err => console.log(err))
+  // }
 
   render() {
     return (
@@ -105,8 +106,8 @@ class Articles extends Component {
                         <p><strong>{article.headline.main}</strong></p>
                         <p>{article.snippet}</p>
                         <p>Publication Date: {article.pub_date}</p>
-                        <a rel="noreferrer noopener" href={article.web_url} target="_blank">Go to article</a>
-                        <button className="btn btn-primary" onClick={() => this.handleSaveArticle(article)}>Save</button>
+                        {/*<a rel="noreferrer noopener" href={article.web_url} target="_blank">Go to article</a>
+                        <button className="btn btn-primary" onClick={() => this.handleSaveArticle(article)}>Save</button>*/}
                       </li>
                       )
                     })}
@@ -120,4 +121,4 @@ class Articles extends Component {
   }
 }
 
-export default Articles;
+export default Home;
