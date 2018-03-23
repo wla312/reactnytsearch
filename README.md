@@ -1,4 +1,12 @@
-# Create React Express App
+# reactnytsearch
+
+A react-based application that queries and displays relevant NYT articles based on the user's search. Users can also save, comment, and delete saved articles.
+
+Uses the React mounting lifecycle.
+
+The deployed version can be found [here](https://safe-chamber-44968.herokuapp.com/).
+
+## Create React Express App
 
 ## About This Boilerplate
 
